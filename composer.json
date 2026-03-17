@@ -1,0 +1,15 @@
+{
+  "name": "escalated/plugin-import-zendesk",
+  "description": "Zendesk import adapter for Escalated",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Escalated\\Plugins\\ImportZendesk\\": "src/"
+    },
+    "files": ["Plugin.php"]
+  }
+}
