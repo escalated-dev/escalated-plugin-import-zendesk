@@ -1,5 +1,7 @@
 # Escalated Plugin: Import Zendesk
 
+[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-import-zendesk.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-import-zendesk/)
+
 **Website:** [escalated.dev](https://escalated.dev)
 
 Imports tickets, contacts, agents, departments, tags, custom fields, and full conversation history from Zendesk into Escalated. Uses Zendesk's incremental export API for efficient large-dataset extraction.
