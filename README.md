@@ -43,4 +43,4 @@ npm install @escalated-dev/plugin-import-zendesk
 
 ## License
 
-MIT
+MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
