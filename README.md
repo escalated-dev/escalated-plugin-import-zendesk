@@ -1,46 +1,67 @@
-# Escalated Plugin: Import Zendesk
+<p align="center">
+  <a href="https://escalated.dev"><img src="https://raw.githubusercontent.com/escalated-dev/escalated/main/docs/assets/readme/logo.png" width="56" height="56" alt="Escalated"></a>
+</p>
 
-[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-import-zendesk.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-import-zendesk/)
+<h1 align="center">Zendesk import for Escalated</h1>
 
-**Website:** [escalated.dev](https://escalated.dev)
+<p align="center">Move your Zendesk helpdesk into Escalated, history included.</p>
 
-Imports tickets, contacts, agents, departments, tags, custom fields, and full conversation history from Zendesk into Escalated. Uses Zendesk's incremental export API for efficient large-dataset extraction.
+<p align="center">
+  <a href="https://escalated.dev"><b>Website</b></a> ·
+  <a href="https://escalated.dev/docs"><b>Docs</b></a> ·
+  <a href="https://escalated.dev/cloud"><b>Cloud</b></a> ·
+  <a href="https://github.com/escalated-dev/escalated-plugin-import-zendesk/releases"><b>Releases</b></a>
+</p>
+
+This plugin imports tickets, contacts, agents, groups, tags, custom fields and full conversation history from Zendesk into Escalated for Laravel, using Zendesk's incremental export API. It's for teams switching from Zendesk, including ones with years of ticket history.
 
 ## Features
 
-- Imports agents, contacts, departments (groups), tags, and custom ticket fields
-- Imports tickets with full status and priority mapping
-- Imports all ticket comments (replies and internal notes) with attachment metadata
-- Uses Zendesk's incremental cursor export for efficient full-history extraction
-- Cursor-based pagination for resumable imports
-- Automatic rate-limit handling with `Retry-After` header support and retry on 429/5xx
-- Maps Zendesk statuses (new, open, pending, hold, solved, closed) to Escalated equivalents
-- Maps Zendesk priorities (low, normal, high, urgent) to Escalated equivalents
-- Attachment metadata collected during reply extraction and downloaded by the framework
+<table>
+<tr>
+<td width="33%" valign="top">
 
-## Configuration
+**What it imports**
+- Agents, contacts, groups, tags, custom fields
+- Tickets with status and priority mapping
+- Comments: replies and internal notes
+- Attachment metadata, downloaded by the framework
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `subdomain` | text | Yes | Your Zendesk subdomain, e.g. `acme` for `acme.zendesk.com`. |
-| `email` | text | Yes | Email address of an admin user. |
-| `token` | password | Yes | API token from Zendesk Admin > Apps & Integrations > APIs > Zendesk API > Tokens. |
+</td>
+<td width="33%" valign="top">
 
-## Hooks
+**Large accounts**
+- Incremental cursor export for full history
+- Resumable imports with cursor pagination
+- Retries on 429 and 5xx, honours Retry-After
 
-### Filters
-- `import.adapters` — Registers the Zendesk import adapter with the Escalated import system.
+</td>
+<td width="33%" valign="top">
 
-## Entity Import Order
+**Mapping**
+- Statuses: new, open, pending, hold, solved, closed
+- Priorities: low, normal, high, urgent
 
-`agents` > `tags` > `custom_fields` > `departments` > `contacts` > `tickets` > `replies` > `attachments`
+</td>
+</tr>
+</table>
 
-## Installation
+<p align="center"><sub><a href="docs/features.md">Every feature in detail</a></sub></p>
 
-```bash
-npm install @escalated-dev/plugin-import-zendesk
-```
+<p align="center">
+  <a href="https://www.php.net"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+  <a href="https://laravel.com"><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"></a>
+  <a href="https://getcomposer.org"><img src="https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer"></a>
+</p>
+
+## Learn more
+
+- [Every feature](docs/features.md)
+- [Configuration, hooks and import order](docs/reference.md)
+- [Plugin SDK](https://github.com/escalated-dev/escalated-plugin-sdk): how Escalated plugins are built
+- [Escalated docs](https://escalated.dev/docs)
+- [Escalated](https://github.com/escalated-dev/escalated), the main repo
 
 ## License
 
-MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
+MIT. Copyright (c) 2026 Escalated.dev. See [LICENSE](LICENSE).
